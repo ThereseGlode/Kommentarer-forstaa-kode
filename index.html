@@ -38,17 +38,24 @@
           a. Bruke metoden addEventlistner med anonym funksjon
         3. Hent resterende HTML-elementer inn i den anonyme funksjonen
           a. Husk å bruke .value for å hente verdi i elementet og ikke selve elementet
-        4. Retuner verdien i input-elementet synlig til nettsiden
-          a. Sjekk resultat i console før det retuneres til siden
+        4. Lage et nytt HTML-element i js som tar i mot input verdi
+          a. Bruke .createElement-metoden for å lage et li-element
+          b. Bruk .textContent-metoden for å legge til input sim innhold i li
+          c. Bruk .classlist.add for å legge til en klasse som har styling fra css 
+        5. Returner nytt li-elemt til ul-elementet i html
+          a.Bruk .appendChild metoden for å legge li i ul 
+        6.(bonus) Lag et button element i Js og sett opp en hendelse lytter
+          a. Bruk .remove() på li-element som den hører til
+        7.Retuner buttoon-element til li-elementet
+          a. Bruk .appendChild for å legge button i li
         -->
         <form>
-          <label for="todoInput">
+          <label for="todoInput">Skriv et gjøremål
             <input type="text" name="todoInput" id="todoInput">
           </label>
-          <button id="addTodo">
-            Legg til
-          </button>
+          <button id="addTodo">Legg til</button>
         </form>
+      <ul id="todoDisplay"><!--Får data fra JS --></ul>
       </section>
     </main>
     <footer>

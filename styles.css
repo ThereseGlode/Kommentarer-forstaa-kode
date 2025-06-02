@@ -3,7 +3,10 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  background-color: #7FBEEB;
 }
+
+
 
 .headerNav {
   display: flex;
@@ -16,7 +19,7 @@ header {
 .links:link,
 .links:hover,
 .links:active {
-  color: black;
+  color: rgb(12, 12, 12);
 }
 
 .headerLogo {
@@ -26,6 +29,7 @@ header {
 /* MAIN */
 main {
   min-height: 100vh;
+  background-color: #AFBED1;
 }
 
 /* FOOTER */
@@ -33,4 +37,26 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+/* TODO-LISTE */
+.todoItem {
+  
+  color: rgb(37, 158, 158);
+}
+
+
+.delete-button {
+  background-color: #4dc7ff;      
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.delete-button:hover {
+  background-color: #cc0000;      /* Mørkere ved hover */
 }
