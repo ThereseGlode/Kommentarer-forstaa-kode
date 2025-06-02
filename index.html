@@ -13,7 +13,7 @@
   <!-- Body er kun for det som skal synes på selve nettsiden -->
   <body>
     <header>
-      <img class="headerLogo" src="images/html.png" alt="Logo with a code bracket." />
+      <img class="headerLogo" src="html.png" alt="Logo with a code bracket." />
       <nav>
         <ul class="headerNav">
           <a class="links" href="#home">
@@ -30,7 +30,25 @@
     </header>
     <main>
       <section id="home" class="sectionHero">
-        <!-- Hero-section -->
+        <!-- To do-application/gjøremålsliste:
+        1. Lage elementene vi trenger i HTML: input, button og paragraf(tekst)
+          a. Tenk semantisk Form-elementer
+          b. Alle element må ha egen ID-navn
+        2. Hent button-element til JS og sett opp hendelse lytter
+          a. Bruke metoden addEventlistner med anonym funksjon
+        3. Hent resterende HTML-elementer inn i den anonyme funksjonen
+          a. Husk å bruke .value for å hente verdi i elementet og ikke selve elementet
+        4. Retuner verdien i input-elementet synlig til nettsiden
+          a. Sjekk resultat i console før det retuneres til siden
+        -->
+        <form>
+          <label for="todoInput">
+            <input type="text" name="todoInput" id="todoInput">
+          </label>
+          <button id="addTodo">
+            Legg til
+          </button>
+        </form>
       </section>
     </main>
     <footer>
