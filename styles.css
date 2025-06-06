@@ -1,62 +1,195 @@
-/* HEADER */
+/* -------------------- HEADER -------------------- */
+
 header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: #7FBEEB;
+  display: flex;                        /* Legger elementene i headeren på linje */
+  align-items: center;                 /* Sentraliserer innholdet vertikalt */
+  justify-content: space-between;     /* Plasserer logo og meny med avstand */
+  background-color: #7FBEEB;          /* Lyseblå bakgrunn */
 }
 
-
-
 .headerNav {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  list-style: none;
+  display: flex;                      /* Viser menyen horisontalt */
+  align-items: center;               /* Justerer menyinnhold vertikalt */
+  gap: 8px;                          /* Avstand mellom hvert menyelement */
+  list-style: none;                  /* Fjerner punktmerking */
 }
 
 .links,
 .links:link,
 .links:hover,
 .links:active {
-  color: rgb(12, 12, 12);
+  color: rgb(12, 12, 12);            /* Farge på lenkene uansett tilstand */
 }
 
 .headerLogo {
-  width: 32px;
+  width: 32px;                       /* Logoens bredde */
 }
 
-/* MAIN */
+/* -------------------- MAIN -------------------- */
+
 main {
-  min-height: 100vh;
-  background-color: #AFBED1;
+  min-height: 100vh;                 /* Minste høyde på main = hele skjermen */
+  background-color: #AFBED1;        /* Bakgrunnsfarge på main-området */
 }
 
-/* FOOTER */
+/* -------------------- FOOTER -------------------- */
+
 footer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: flex;                     /* Plasserer innholdet horisontalt */
+  align-items: center;              /* Midtjusterer vertikalt */
+  justify-content: center;          /* Midtjusterer horisontalt */
 }
 
-/* TODO-LISTE */
-.todoItem {
-  
-  color: rgb(37, 158, 158);
+/* -------------------- SKJEMA (FORM) -------------------- */
+
+form {
+  display: flex;                     /* Gjør skjemaet til en fleksibel boks */
+  flex-direction: column;           /* Legger elementene under hverandre */
+  align-items: flex-start;          /* Venstrejusterer innholdet */
+  gap: 10px;                         /* Avstand mellom label, input og knapp */
+  max-width: 400px;                  /* Maks bredde på skjemaet */
+  margin: 20px auto;                 /* Sentraliserer skjemaet horisontalt */
 }
 
+/* Label-tekst (f.eks. "Skriv et gjøremål ✅") */
+form label {
+  font-weight: bold;                /* Fet tekst */
+  font-size: 1.2rem;                /* Litt større tekst */
+  color: #3276a8;                   /* Blåfarge */
+  margin-bottom: 4px;               /* Litt luft under teksten */
+  text-transform: uppercase;        /* Gjør all tekst STORE BOKSTAVER */
+  letter-spacing: 0.5px;            /* Litt mellomrom mellom bokstaver */
+}
 
+/* Input-feltet */
+#todoInput {
+  padding: 10px;                    /* Luft inni input-feltet */
+  font-size: 1rem;                  /* Normal skriftstørrelse */
+  border: 2px solid #ccc;           /* Grå kant */
+  border-radius: 8px;               /* Runder kantene */
+  width: 250px;                     /* Bredde på feltet */
+}
+
+/* Legg til-knappen */
+#addTodo {
+  background-color: #7FBEEB;        /* Bakgrunnsfarge */
+  color: #000;                      /* Tekstfarge */
+  font-weight: bold;               /* Fet tekst */
+  border: none;                    /* Fjerner standardramme */
+  padding: 10px 16px;              /* Luft inni knappen */
+  border-radius: 8px;              /* Runde hjørner */
+  cursor: pointer;                 /* Muspeker endres til hånd */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Glatt animasjon ved hover */
+}
+
+#addTodo:hover {
+  background-color: #7FBEEB;       /* Samme farge, men du kan endre hvis du vil */
+  transform: scale(1.05);          /* Gjør knappen litt større ved hover */
+}
+
+/* -------------------- TODO-LISTE (UL og LI) -------------------- */
+
+/* Listen som inneholder alle oppgaver */
+#todoDisplay {
+  margin: 30px auto;                /* Luft rundt, og sentrert */
+  max-width: 600px;                 /* Maks bredde */
+  padding: 0;                       /* Ingen padding */
+  list-style: none;                 /* Fjerner prikker på lista */
+}
+
+/* Hver oppgave (LI) som et kort */
+.todo-item {
+  background: #ffffff;              /* Hvit bakgrunn */
+  color: #333;                      /* Mørk grå tekst */
+  margin-bottom: 15px;              /* Luft mellom kortene */
+  padding: 15px 20px;               /* Luft inni kortet */
+  border-radius: 12px;              /* Runde hjørner */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08); /* Myk skygge */
+  display: flex;                    /* Plasserer innhold side ved side */
+  align-items: center;              /* Midtjusterer innholdet vertikalt */
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.todo-item:hover {
+  background: #f0f8ff;              /* Lys blå ved hover */
+  transform: translateY(-2px);      /* Løfter kortet litt opp ved hover */
+}
+
+/* Selve teksten inni oppgaven */
+.todo-text {
+  flex: 1;                          /* Tar opp all ledig plass før knappene */
+}
+
+/* Når oppgaven er ferdig (via JS toggle) */
+.completed {
+  text-decoration: line-through;    /* Gjør teksten gjennomstreket */
+  opacity: 0.85;                    /* Gjør den litt svakere/lysere */
+}
+
+/* -------------------- KNAPPER -------------------- */
+
+.complete-button,
 .delete-button {
-  background-color: #4dc7ff;      
-  color: rgb(34, 32, 32);
-  border: none;
-  padding: 5px 10px;
-  border-radius: 15px;
-  font-size: 0.9rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+  background-color: #4dc7ff;        /* Blå bakgrunn */
+  color: rgb(34, 32, 32);           /* Mørk tekst */
+  border: none;                     /* Fjerner kant */
+  padding: 5px 10px;                /* Luft inni knappene */
+  border-radius: 15px;              /* Runde knapper */
+  font-size: 0.9rem;                /* Litt mindre tekst */
+  cursor: pointer;                  /* Klikkbar */
+  transition: background-color 0.3s ease; /* Myk animasjon ved hover */
+  margin-left: 8px;                 /* Luft mellom knappene */
 }
 
+/* Når du holder over "Oppdrag utført"-knappen */
+.complete-button:hover {
+  background-color: #e0eae4;        /* Lys grågrønn ved hover */
+}
+
+/* Når du holder over "Slett"-knappen */
 .delete-button:hover {
-  background-color: #cc0000;      /* Mørkere ved hover */
+  background-color: #fae3e3;        /* Lys rosa ved hover */
+}
+
+/* -------------------- RESPONSIV LØSNING -------------------- */
+@media (max-width: 600px) {
+  header,
+  .headerNav {
+    flex-direction: column;         /* Meny og logo under hverandre på mobil */
+    align-items: center;
+    text-align: center;
+  }
+
+  .headerNav {
+    gap: 16px;
+    margin-top: 10px;
+  }
+
+  form {
+    width: 90%;
+    align-items: stretch;           /* Input og knapp blir 100% bredde */
+  }
+
+  #todoInput {
+    width: 100%;
+  }
+
+  #addTodo {
+    width: 100%;
+  }
+
+  .todo-item {
+    flex-direction: column;         /* Tekst og knapper under hverandre */
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .todo-text {
+    width: 100%;
+  }
+
+  .complete-button,
+  .delete-button {
+    width: 100%;
+  }
 }
